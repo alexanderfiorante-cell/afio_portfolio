@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alex Fiorante | Java, Python, Web Developer</title>
+  <meta name="description" content="Alex Fiorante. Java, Python, web design and web development services on Fiverr." />
+
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#10182b;
+      --text:#e8eefc;
+      --muted:#b8c4e3;
+      --accent:#6ee7ff;
+      --accent2:#a78bfa;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 20px 50px rgba(0,0,0,.35);
+      --radius:18px;
+      --max: 1060px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(110,231,255,.18), transparent 60%),
+        radial-gradient(800px 500px at 85% 10%, rgba(167,139,250,.18), transparent 55%),
+        radial-gradient(700px 500px at 50% 110%, rgba(110,231,255,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,23,.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+      padding:14px 22px;
+      max-width:var(--max); margin:0 auto;
+    }
+    .brand{display:flex; gap:10px; align-items:center}
+    .dot{
+      width:12px; height:12px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(110,231,255,.10);
+    }
+    .brand b{letter-spacing:.2px}
+    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      padding:8px 10px; border-radius:12px; color:var(--muted);
+      border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--border); color:var(--text); background:rgba(255,255,255,.04)}
+    .hero{padding:34px 0 10px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .hero{padding-top:22px}
+    }
+    .card{
+      background: rgba(16,24,43,.78);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:7px 12px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      color:var(--muted);
+      background: rgba(255,255,255,.03);
+      font-size: 13px;
+    }
+    h1{margin:12px 0 10px; font-size: 40px; line-height:1.1}
+    @media (max-width: 500px){h1{font-size:34px}}
+    .subtitle{color:var(--muted); font-size:16px; margin:0 0 16px}
+    .btns{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:11px 14px;
+      border-radius: 14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight: 600;
+      cursor:pointer;
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
+      color:#06101a;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0)}
+    .mini{font-size:13px; color:var(--muted); margin-top:10px}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+    .pill{
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size: 13px;
+    }
+    section{padding:14px 0}
+    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:10px; margin:0 0 10px}
+    .sectionTitle h2{margin:0; font-size:20px}
+    .sectionTitle span{color:var(--muted); font-size:13px}
+    .cards3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 900px){.cards3{grid-template-columns:1fr}}
+    .cards2{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 900px){.cards2{grid-template-columns:1fr}}
+    .tag{display:inline-block; font-size:12px; color:var(--muted); margin-top:6px}
+    .list{margin:10px 0 0; padding:0 0 0 18px; color:var(--muted)}
+    .list li{margin:6px 0}
+    .footer{
+      padding:26px 0 34px;
+      color:var(--muted);
+      font-size: 13px;
+      text-align:center;
+    }
+    .split{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:10px
+    }
+    .split .chip{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding:10px 12px;
+      color:var(--muted);
+      font-size: 13px;
+      flex: 1 1 220px;
+    }
+    .note{
+      border-left: 3px solid rgba(110,231,255,.8);
+      padding-left: 12px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+    .hidden{display:none}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="dot"></div>
+        <b>Alex Fiorante</b>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#process">How I work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="grid">
+        <div class="card">
+          <div class="kicker">Freelance developer on Fiverr</div>
+          <h1>Java, Python, Web Design, Web Development</h1>
+          <p class="subtitle">
+            I help people ship clean, reliable code and modern responsive websites. If you need a bug fixed, a feature added, or a simple site built right, message me on Fiverr.
+          </p>
+
+          <div class="btns">
+            <a class="btn primary" id="openFiverrTop" href="#" target="_blank" rel="noreferrer">Message me on Fiverr</a>
+            <a class="btn" id="copyFiverrBtn" href="javascript:void(0)">Copy Fiverr profile link</a>
+            <a class="btn" id="openLinkedInTop" href="#" target="_blank" rel="noreferrer">View LinkedIn</a>
+          </div>
+
+          <p class="mini" id="copyMsg"></p>
+
+          <div class="pillrow">
+            <span class="pill">Bug fixes</span>
+            <span class="pill">Feature builds</span>
+            <span class="pill">Automation scripts</span>
+            <span class="pill">Responsive websites</span>
+            <span class="pill">Clean UI updates</span>
+          </div>
+
+          <div class="note">
+            No public repos yet. If you want samples, message me on Fiverr and I can share relevant examples based on what you need.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="sectionTitle">
+            <h2>Quick info</h2>
+            <span>Clear, fast, dependable</span>
+          </div>
+
+          <div class="split">
+            <div class="chip"><b>Best for</b><br/>Small to medium projects, fixes, and clean rebuilds</div>
+            <div class="chip"><b>Communication</b><br/>Simple updates and no confusion</div>
+            <div class="chip"><b>Delivery</b><br/>Organized files and setup steps</div>
+            <div class="chip"><b>Approach</b><br/>Fix the root cause, not the symptom</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="sectionTitle">
+              <h2>Links</h2>
+              <span>Verified</span>
+            </div>
+            <div class="pillrow">
+              <a class="pill" id="fiverrLink" href="#" target="_blank" rel="noreferrer">Fiverr</a>
+              <a class="pill" id="linkedinLink" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="sectionTitle">
+        <h2>Services</h2>
+        <span>What I can do for you</span>
+      </div>
+
+      <div class="cards3">
+        <div class="card">
+          <b>Java development</b>
+          <div class="tag">OOP, debugging, refactors, feature additions</div>
+          <ul class="list">
+            <li>Fix errors and logic issues</li>
+            <li>Add new features to existing code</li>
+            <li>Clean up structure and readability</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <b>Python scripts and automation</b>
+          <div class="tag">Task automation, parsing, data handling, APIs</div>
+          <ul class="list">
+            <li>Automate repetitive tasks</li>
+            <li>Build scripts that save time</li>
+            <li>Generate clean outputs and reports</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <b>Web design and web development</b>
+          <div class="tag">Responsive pages, landing pages, fixes, improvements</div>
+          <ul class="list">
+            <li>Modern responsive layout</li>
+            <li>UI cleanup and styling upgrades</li>
+            <li>Fix broken sections and pages</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="sectionTitle">
+        <h2>Skills</h2>
+        <span>Core stack</span>
+      </div>
+
+      <div class="card">
+        <div class="pillrow">
+          <span class="pill">Java</span>
+          <span class="pill">Python</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Responsive design</span>
+          <span class="pill">Debugging</span>
+          <span class="pill">Refactoring</span>
+        </div>
+        <p class="mini">As you build work, you can add a Samples section later. This version is focused on getting clients now.</p>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="sectionTitle">
+        <h2>How I work</h2>
+        <span>What you can expect</span>
+      </div>
+
+      <div class="cards2">
+        <div class="card">
+          <b>Simple process</b>
+          <ul class="list">
+            <li>You explain the goal and share any files or links</li>
+            <li>I confirm scope and the fastest path to finish</li>
+            <li>I build or fix and keep you updated</li>
+            <li>You get clean delivery and basic instructions</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <b>What I need from you</b>
+          <ul class="list">
+            <li>What you want built or fixed</li>
+            <li>Any error messages or screenshots</li>
+            <li>Tech stack and environment</li>
+            <li>Deadline and budget range</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sectionTitle">
+        <h2>Contact</h2>
+        <span>Fast response</span>
+      </div>
+
+      <div class="cards2">
+        <div class="card">
+          <b>Best way to reach me</b>
+          <p class="subtitle" style="margin-top:10px">
+            Message me on Fiverr with what you need and I will reply with a clear plan.
+          </p>
+          <div class="btns">
+            <a class="btn primary" id="openFiverrBottom" href="#" target="_blank" rel="noreferrer">Open Fiverr</a>
+            <a class="btn" id="copyTemplateBtn" href="javascript:void(0)">Copy message template</a>
+          </div>
+          <p class="mini" id="templateMsg"></p>
+
+          <div class="note" style="margin-top:14px">
+            Tip: Keep your first Fiverr message short. Goal, current issue, deadline, budget range.
+          </div>
+        </div>
+
+        <div class="card">
+          <b>LinkedIn</b>
+          <p class="subtitle" style="margin-top:10px">
+            If someone wants to verify you or learn more, this makes you look legit.
+          </p>
+          <div class="btns">
+            <a class="btn" id="openLinkedInBottom" href="#" target="_blank" rel="noreferrer">Open LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> Alex Fiorante
+    </div>
+  </main>
+
+  <script>
+    const SETTINGS = {
+      fiverrUrl: "https://www.fiverr.com/alexfiorante",
+      linkedinUrl: "https://www.linkedin.com/in/alexander-fiorante-7903b3264/"
+    };
+
+    const setHref = (id, url) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.href = url;
+    };
+
+    setHref("fiverrLink", SETTINGS.fiverrUrl);
+    setHref("linkedinLink", SETTINGS.linkedinUrl);
+
+    setHref("openFiverrTop", SETTINGS.fiverrUrl);
+    setHref("openFiverrBottom", SETTINGS.fiverrUrl);
+
+    setHref("openLinkedInTop", SETTINGS.linkedinUrl);
+    setHref("openLinkedInBottom", SETTINGS.linkedinUrl);
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("copyFiverrBtn").addEventListener("click", async () => {
+      const msg = document.getElementById("copyMsg");
+      try{
+        await navigator.clipboard.writeText(SETTINGS.fiverrUrl);
+        msg.textContent = "Fiverr link copied.";
+      }catch{
+        msg.textContent = "Copy did not work. Here it is: " + SETTINGS.fiverrUrl;
+      }
+    });
+
+    const template =
+`Hi Alex, I need help with:
+Goal:
+What is currently broken or missing:
+Language or stack:
+Deadline:
+Budget range:
+Any files or links:`;
+
+    document.getElementById("copyTemplateBtn").addEventListener("click", async () => {
+      const msg = document.getElementById("templateMsg");
+      try{
+        await navigator.clipboard.writeText(template);
+        msg.textContent = "Template copied.";
+      }catch{
+        msg.textContent = "Copy did not work. You can copy it from the page source if needed.";
+      }
+    });
+  </script>
+</body>
+</html>

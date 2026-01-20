@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Alex Fiorante | Send a Message</title>
+  <meta name="description" content="Contact Alex Fiorante for Java, Python, or web development services." />
+
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card: #10182b;
+      --text: #e8eefc;
+      --muted: #b8c4e3;
+      --accent: #6ee7ff;
+      --accent2: #a78bfa;
+      --border: rgba(255, 255, 255, 0.10);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      --radius: 18px;
+      --max: 700px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(110, 231, 255, 0.18), transparent 60%),
+        radial-gradient(800px 500px at 85% 10%, rgba(167, 139, 250, 0.18), transparent 55%),
+        radial-gradient(700px 500px at 50% 110%, rgba(110, 231, 255, 0.10), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(11, 15, 23, 0.75);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 24px;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(110, 231, 255, 0.10);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .brand:hover .dot {
+      box-shadow: 0 0 0 8px rgba(110, 231, 255, 0.15);
+    }
+
+    .brand b {
+      letter-spacing: 0.3px;
+      font-size: 16px;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      padding: 8px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      border-color: var(--border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .card {
+      background: rgba(16, 24, 43, 0.78);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      margin-top: 24px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 26px;
+      }
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0 0 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-size: 15px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(110, 231, 255, 0.12);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(184, 196, 227, 0.5);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23b8c4e3'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+    }
+
+    select option {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .btn.primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(110, 231, 255, 0.95), rgba(167, 139, 250, 0.95));
+      color: #06101a;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .note {
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      color: var(--muted);
+      margin-top: 24px;
+      font-size: 14px;
+    }
+
+    .note a {
+      color: var(--accent);
+    }
+
+    .note a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      padding: 32px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .hidden {
+      position: absolute;
+      left: -9999px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a href="index.html" class="brand">
+        <div class="dot"></div>
+        <b>Alex Fiorante</b>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <a href="index.html" class="back-link">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></svg>
+      Back to home
+    </a>
+
+    <div class="card">
+      <h1>Send me a message</h1>
+      <p class="subtitle">
+        Fill out the form below and I will get back to you as soon as possible. Please include as much detail as you can about your project.
+      </p>
+
+      <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="subject" value="New message from portfolio contact form" />
+
+        <p class="hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required placeholder="John Doe" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="service">What service do you need?</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service...</option>
+            <option value="java">Java development</option>
+            <option value="python">Python scripts / automation</option>
+            <option value="web">Web design / development</option>
+            <option value="bug-fix">Bug fix</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Budget range (optional)</label>
+          <select id="budget" name="budget">
+            <option value="">Select if known...</option>
+            <option value="under-50">Under $50</option>
+            <option value="50-100">$50 - $100</option>
+            <option value="100-250">$100 - $250</option>
+            <option value="250-500">$250 - $500</option>
+            <option value="500+">$500+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" required placeholder="Describe what you need help with, any current issues, tech stack, and your timeline..."></textarea>
+        </div>
+
+        <button type="submit" class="btn primary">Send message</button>
+      </form>
+
+      <div class="note">
+        Prefer direct contact? You can also email me at <a href="mailto:alexfiorante.dev@gmail.com">alexfiorante.dev@gmail.com</a> or message me on <a href="https://www.fiverr.com/alexfiorante" target="_blank" rel="noreferrer">Fiverr</a>.
+      </div>
+    </div>
+
+    <div class="footer">
+      &copy; <span id="year"></span> Alex Fiorante
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

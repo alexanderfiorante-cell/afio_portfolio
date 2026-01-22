@@ -47,10 +47,9 @@
       max-width:var(--max); margin:0 auto;
     }
     .brand{display:flex; gap:10px; align-items:center}
-    .dot{
-      width:12px; height:12px; border-radius:50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 6px rgba(110,231,255,.10);
+    .logo{
+      height:32px;
+      width:auto;
     }
     .brand b{letter-spacing:.2px}
     nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
@@ -168,7 +167,7 @@
   <header>
     <div class="nav">
       <div class="brand">
-        <div class="dot"></div>
+        <img src="assets/logo.png" alt="AFIO Develops logo" class="logo">
         <b>Alex Fiorante</b>
       </div>
       <nav>
@@ -333,7 +332,7 @@
         <span>Fast response</span>
       </div>
 
-      <div class="cards2">
+      <div class="cards3">
         <div class="card">
           <b>Best way to reach me</b>
           <p class="subtitle" style="margin-top:10px">
@@ -348,6 +347,18 @@
           <div class="note" style="margin-top:14px">
             Tip: Keep your first Fiverr message short. Goal, current issue, deadline, budget range.
           </div>
+        </div>
+
+        <div class="card">
+          <b>Email</b>
+          <p class="subtitle" style="margin-top:10px">
+            Just as fast as Fiverr. Send me an email and I will get back to you quickly.
+          </p>
+          <div class="btns">
+            <a class="btn primary" href="mailto:alexfiorante.dev@gmail.com">alexfiorante.dev@gmail.com</a>
+            <a class="btn" id="copyEmailBtn" href="javascript:void(0)">Copy email</a>
+          </div>
+          <p class="mini" id="emailMsg"></p>
         </div>
 
         <div class="card">
@@ -416,6 +427,16 @@ Any files or links:`;
         msg.textContent = "Template copied.";
       }catch{
         msg.textContent = "Copy did not work. You can copy it from the page source if needed.";
+      }
+    });
+
+    document.getElementById("copyEmailBtn").addEventListener("click", async () => {
+      const msg = document.getElementById("emailMsg");
+      try{
+        await navigator.clipboard.writeText("alexfiorante.dev@gmail.com");
+        msg.textContent = "Email copied.";
+      }catch{
+        msg.textContent = "Copy did not work. Here it is: alexfiorante.dev@gmail.com";
       }
     });
   </script>

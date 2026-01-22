@@ -294,7 +294,6 @@
           <span class="pill">Debugging</span>
           <span class="pill">Refactoring</span>
         </div>
-        <p class="mini">As you build work, you can add a Samples section later. This version is focused on getting clients now.</p>
       </div>
     </section>
 
@@ -351,13 +350,16 @@
         </div>
 
         <div class="card">
-          <b>LinkedIn</b>
+          <b>Email & LinkedIn</b>
           <p class="subtitle" style="margin-top:10px">
-            If someone wants to verify you or learn more, this makes you look legit.
+            Just as fast as Fiverr. Send me an email and I will get back to you quickly.
           </p>
           <div class="btns">
+            <a class="btn primary" id="emailBtn" href="mailto:alexfiorante.dev@gmail.com">alexfiorante.dev@gmail.com</a>
+            <a class="btn" id="copyEmailBtn" href="javascript:void(0)">Copy email</a>
             <a class="btn" id="openLinkedInBottom" href="#" target="_blank" rel="noreferrer">Open LinkedIn</a>
           </div>
+          <p class="mini" id="emailMsg"></p>
         </div>
       </div>
     </section>
@@ -416,6 +418,17 @@ Any files or links:`;
         msg.textContent = "Template copied.";
       }catch{
         msg.textContent = "Copy did not work. You can copy it from the page source if needed.";
+      }
+    });
+
+    const emailAddress = "alexfiorante.dev@gmail.com";
+    document.getElementById("copyEmailBtn").addEventListener("click", async () => {
+      const msg = document.getElementById("emailMsg");
+      try{
+        await navigator.clipboard.writeText(emailAddress);
+        msg.textContent = "Email copied.";
+      }catch{
+        msg.textContent = "Copy did not work. Here it is: " + emailAddress;
       }
     });
   </script>

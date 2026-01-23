@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alex Fiorante | Java, Python, Web Developer</title>
-  <meta name="description" content="Alex Fiorante. Java, Python, web design and web development services on Fiverr." />
+  <meta name="description" content="Alex Fiorante. Java, Python, web design and web development services on Fiverr.">
+  <link rel="icon" type="image/png" href="/favicon.png">
 
   <style>
     :root{
@@ -160,6 +161,9 @@
       color: var(--muted);
       margin-top: 12px;
     }
+    .note.mt-14{margin-top:14px}
+    .mt-14{margin-top:14px}
+    .subtitle.mt-10{margin-top:10px}
     .hidden{display:none}
   </style>
 </head>
@@ -218,13 +222,13 @@
           </div>
 
           <div class="split">
-            <div class="chip"><b>Best for</b><br/>Small to medium projects, fixes, and clean rebuilds</div>
-            <div class="chip"><b>Communication</b><br/>Simple updates and no confusion</div>
-            <div class="chip"><b>Delivery</b><br/>Organized files and setup steps</div>
-            <div class="chip"><b>Approach</b><br/>Fix the root cause, not the symptom</div>
+            <div class="chip"><b>Best for</b><br>Small to medium projects, fixes, and clean rebuilds</div>
+            <div class="chip"><b>Communication</b><br>Simple updates and no confusion</div>
+            <div class="chip"><b>Delivery</b><br>Organized files and setup steps</div>
+            <div class="chip"><b>Approach</b><br>Fix the root cause, not the symptom</div>
           </div>
 
-          <div style="margin-top:14px">
+          <div class="mt-14">
             <div class="sectionTitle">
               <h2>Links</h2>
               <span>Verified</span>
@@ -294,7 +298,6 @@
           <span class="pill">Debugging</span>
           <span class="pill">Refactoring</span>
         </div>
-        <p class="mini">As you build work, you can add a Samples section later. This version is focused on getting clients now.</p>
       </div>
     </section>
 
@@ -336,7 +339,7 @@
       <div class="cards2">
         <div class="card">
           <b>Best way to reach me</b>
-          <p class="subtitle" style="margin-top:10px">
+          <p class="subtitle mt-10">
             Message me on Fiverr with what you need and I will reply with a clear plan.
           </p>
           <div class="btns">
@@ -345,19 +348,24 @@
           </div>
           <p class="mini" id="templateMsg"></p>
 
-          <div class="note" style="margin-top:14px">
+          <div class="note mt-14">
             Tip: Keep your first Fiverr message short. Goal, current issue, deadline, budget range.
           </div>
         </div>
 
         <div class="card">
-          <b>LinkedIn</b>
-          <p class="subtitle" style="margin-top:10px">
-            If someone wants to verify you or learn more, this makes you look legit.
+          <b>Email &amp; LinkedIn</b>
+          <p class="subtitle mt-10">
+            Just as fast as Fiverr. Send me an email and I will get back to you quickly.
           </p>
+          <div class="btns">
+            <a class="btn primary" id="emailLink" href="mailto:alexfiorante.dev@gmail.com">alexfiorante.dev@gmail.com</a>
+            <a class="btn" id="copyEmailBtn" href="javascript:void(0)">Copy email</a>
+          </div>
           <div class="btns">
             <a class="btn" id="openLinkedInBottom" href="#" target="_blank" rel="noreferrer">Open LinkedIn</a>
           </div>
+          <p class="mini" id="emailMsg"></p>
         </div>
       </div>
     </section>
@@ -416,6 +424,17 @@ Any files or links:`;
         msg.textContent = "Template copied.";
       }catch{
         msg.textContent = "Copy did not work. You can copy it from the page source if needed.";
+      }
+    });
+
+    const emailAddress = "alexfiorante.dev@gmail.com";
+    document.getElementById("copyEmailBtn").addEventListener("click", async () => {
+      const msg = document.getElementById("emailMsg");
+      try{
+        await navigator.clipboard.writeText(emailAddress);
+        msg.textContent = "Email copied.";
+      }catch{
+        msg.textContent = "Copy did not work. Here it is: " + emailAddress;
       }
     });
   </script>
